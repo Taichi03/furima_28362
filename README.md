@@ -27,11 +27,26 @@ Things you may want to cover:
 
 ## users テーブル
 
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| nickname | string | null: false |
-| email    | string | null: false |
-| password | string | null: false |
+| Column          | Type   | Options     |
+| --------        | ------ | ----------- |
+| nickname        | string | null: false |
+| email           | string | null: false |
+| password        | string | null: false |
+| password_check  | string | null: false |
+| last_name       | string | null: false |
+| first_name      | string | null: false |
+| last_name_kana  | string | null: false |
+| first_name_kana | string | null: false |
+| birth_year      | string | null: false |
+| birth_month     | string | null: false |
+| birth_day       | string | null: false |
+
+### Association
+
+- has_many :items
+- has_many :purchases
+
+
 
 ## items テーブル
 
@@ -43,32 +58,42 @@ Things you may want to cover:
 | condition | string | null: false |
 | text      | string | null: false |
 | image     | string | null: false |
+| favorite  | string | null: false |
+| seller    | string | null: false |
+
+### Association
+
+- has_many :purchases
+- belongs_to :users
 
 ## purchases テーブル
 
-| Column    | Type   | Options     |
-| --------  | ------ | ----------- |
-| comment   | string | null: false |
+| Column      | Type       | Options                        |
+| --------    | ------     | -----------                    |
+| user_id     | references | null: false, foreign_key: true |
+| item_id     | references | null: false, foreign_key: true |
+| comment     | string     | null: false                    |
+
+### Association
+
+- has_one :addresses
+- belongs_to :users
+- belongs_to :items
 
 ## addresses テーブル
 
-| Column      | Type   | Options     |
-| --------    | ------ | ----------- |
-| postal      | string | null: false |
-| prefectures | string | null: false |
-| city        | string | null: false |
-| address     | string | null: false |
-| building    | string | null: false |
-| phone       | string | null: false |
+| Column       | Type   | Options     |
+| --------     | ------ | ----------- |
+| postal       | string | null: false |
+| prefectures  | string | null: false |
+| city         | string | null: false |
+| address      | string | null: false |
+| building     | string |             |
+| phone_number | string | null: false |
 
-## cards テーブル
+### Association
 
-| Column      | Type   | Options     |
-| --------    | ------ | ----------- |
-| number      | string | null: false |
-| month       | string | null: false |
-| year        | string | null: false |
-| security    | string | null: false |
+- belongs_to :purchases
 
 
 

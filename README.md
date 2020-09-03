@@ -46,18 +46,18 @@ Things you may want to cover:
 
 ## items テーブル
 
-| Column          | Type       | Options                        |
-| --------        | ------     | -----------                    |
-| name            | string     | null: false                    |
-| category_id     | integer    | null: false                    |
-| price_id        | integer    | null: false                    |
-| condition_id    | integer    | null: false                    |
-| text            | text       | null: false                    |
-| image           | string     | null: false                    |
-| ship_from_id    | integer    | null: false                    |
-| date_ship_id    | integer    | null: false                    |
-| shipping_fee_id | integer    | null: false                    |
-| user            | references | null: false, foreign_key: true |
+| Column                      | Type       | Options                        |
+| --------                    | ------     | -----------                    |
+| item_name                   | string     | null: false                    |
+| item_category_id            | integer    | null: false                    |
+| item_price_id               | integer    | null: false                    |
+| item_sales_status_id        | integer    | null: false                    |
+| item_info                   | text       | null: false                    |
+| item_image                  | string     | null: false                    |
+| item_prefecture_id          | integer    | null: false                    |
+| item_scheduled_delivery_id  | integer    | null: false                    |
+| item_shipping_fee_status_id | integer    | null: false                    |
+| user                        | references | null: false, foreign_key: true |
 
 ### Association
 

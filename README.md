@@ -50,7 +50,7 @@ Things you may want to cover:
 | --------                    | ------     | -----------                    |
 | item_name                   | string     | null: false                    |
 | item_category_id            | integer    | null: false                    |
-| item_price_id               | integer    | null: false                    |
+| item_price                  | string     | null: false                    |
 | item_sales_status_id        | integer    | null: false                    |
 | item_info                   | text       | null: false                    |
 | item_image                  | string     | null: false                    |

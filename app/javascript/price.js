@@ -1,8 +1,6 @@
 window.addEventListener("load", function () {
-  console.log("hoge");
 
   $("#item-price").on("keyup", function () {
-    console.log("ok");
     let price = $(this).val();
     let fee = Math.round(price * 0.1);
     let profit = price - fee;

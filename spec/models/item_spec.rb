@@ -29,25 +29,50 @@ RSpec.describe Item, type: :model do
       @item.valid?
       expect(@item.errors.full_message).to include(" can't be blank")
     end
+    it 'item_category_idが1だと登録できない事' do
+      @item.item_category_id = "1"
+      @item.valid?
+      expect(@item.errors.full_message).to include(" item_category_id is invalid. Input 1 other than characters.")
+    end  
     it 'item_salse_status_idが空だと登録できない事' do
       @item.item_salse_status_id = nil
       @item.valid?
       expect(@item.errors.full_message).to include(" can't be blank")
+    end
+    it 'item_sales_status_idが1だと登録できない事' do
+      @item.item_category_id = "1"
+      @item.valid?
+      expect(@item.errors.full_message).to include(" item_salse_status_id is invalid. Input 1 other than characters.")
     end
     it 'item_shipping_fee_status_idが空だと登録できない事' do
       @item.item_shipping_fee_status_id = nil
       @item.valid?
       expect(@item.errors.full_message).to include(" can't be blank")
     end
+    it 'item_shipping_fee_status_idが1だと登録できない事' do
+      @item.item_category_id = "1"
+      @item.valid?
+      expect(@item.errors.full_message).to include(" item_shipping_fee_status_id is invalid. Input 1 other than characters.")
+    end
     it 'item_prefecture_idが空だと登録できない事' do
       @item.item_prefecture_id = nil
       @item.valid?
       expect(@item.errors.full_message).to include(" can't be blank")
     end
+    it 'item_prefecture_idが1だと登録できない事' do
+      @item.item_category_id = "1"
+      @item.valid?
+      expect(@item.errors.full_message).to include(" item_prefecture_id is invalid. Input 1 other than characters.")
+    end
     it 'item_scheduled_delivery_idが空だと登録できない事' do
       @item.item_scheduled_delivery_id = nil
       @item.valid?
       expect(@item.errors.full_message).to include(" can't be blank")
+    end
+    it 'item_scheduled_delivery_idが1だと登録できない事' do
+      @item.item_category_id = "1"
+      @item.valid?
+      expect(@item.errors.full_message).to include(" item_scheduled_delivery_id is invalid. Input 1 other than characters.")
     end
     it 'item_priceが空だと登録できない事' 
       @item.item_price = nil

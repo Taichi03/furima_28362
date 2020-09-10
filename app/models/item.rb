@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :user
   belongs_to_active_hash :item_category
   belongs_to_active_hash :item_prefecture
   belongs_to_active_hash :item_sales_status

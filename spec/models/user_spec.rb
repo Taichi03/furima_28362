@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe Users, type: :model do
+RSpec.describe User, type: :model do
   describe 'ユーザー新規登録' do
     before do
-      @users = FactoryBot.build(:users)
+      @users = FactoryBot.build(:user)
     end
 
     it 'すべての値が正しく入力されていれば保存できる' do

@@ -18,11 +18,8 @@ class ItemsController < ApplicationController
     end
   end
 
-  def show
-  end
 
-  def edit
-  end
+
 
   def update
     if @item.update(item_params)
@@ -34,7 +31,7 @@ class ItemsController < ApplicationController
 
   def destroy
     if @item.destroy
-      redirect_to item_path
+      redirect_to root_path
     else
       render :edit
     end

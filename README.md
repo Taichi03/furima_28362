@@ -65,12 +65,13 @@ Things you may want to cover:
 - has_many :favorites
 - belongs_to :user
 
-## purchases テーブル
+## Orders テーブル
 
 | Column      | Type       | Options                        |
 | --------    | ------     | -----------                    |
 | user        | references | null: false, foreign_key: true |
 | item        | references | null: false, foreign_key: true |
+
 
 ### Association
 
@@ -82,17 +83,17 @@ Things you may want to cover:
 
 | Column          | Type       | Options     |
 | --------        | ------     | ----------- |
-| postal          | string     | null: false |
-| prefectures_id  | integer    | null: false |
+| postal_code     | string     | null: false |
+| prefecture_id   | integer    | null: false |
 | city            | string     | null: false |
 | address         | string     | null: false |
-| building        | string     |             |
+| building        | string     | null: false |
 | phone_number    | string     | null: false |
-| purchase        | references | null: false |
+| order           | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :purchase
+- belongs_to :order
 
 
 ## favorites テーブル

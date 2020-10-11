@@ -1,1 +1,1 @@
-import "./price"
+// import "./price"

@@ -8,6 +8,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :item_shipping_fee_status
   belongs_to_active_hash :item_scheduled_delivery
   has_one_attached :image
+  has_one :order
 
   with_options presence: true do
     with_options numericality: { greater_than_or_equal_to: 300 } do

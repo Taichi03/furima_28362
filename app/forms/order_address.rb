@@ -12,7 +12,7 @@ class OrderAddress
     validates :user_id
     validates :token
 
-    with_options numericality: { other_than: 1, message: 'Prefecture must be other than ---' } do
+    with_options numericality: { other_than: 1, message: 'Prefecture must be other than 1' } do
       validates :prefecture_id
     end
   end

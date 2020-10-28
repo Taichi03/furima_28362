@@ -9,7 +9,7 @@ class User < ApplicationRecord
     validates :birth_date
     zen_name = /\A[ぁ-んァ-ン一-龥]/
     kana_name = /\A[ァ-ヶー－]+\z/
-    half_width = /\A[a-zA-Z0-9]+\z/
+    half_width = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i
     validates :first_name, format: { with: zen_name, message: 'is invalid. Input full-width characters.' }
     validates :last_name, format: { with: zen_name, message: 'is invalid. Input full-width characters.' }
     validates :first_name_kana, format: { with: kana_name, message: 'is invalid. Input full-width katakana characters.' }
